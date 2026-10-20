@@ -1,0 +1,58 @@
+{
+  "nodes": [
+    {
+      "id": "demo_paper",
+      "node_id": "demo_paper",
+      "node_type": "Paper",
+      "paper_id": "demo",
+      "page": -1,
+      "content": "Synthetic sensor demonstration",
+      "image_path": null,
+      "metadata": {
+        "split": "train"
+      }
+    },
+    {
+      "id": "demo_concept",
+      "node_id": "demo_concept",
+      "node_type": "Concept",
+      "paper_id": "demo",
+      "page": -1,
+      "content": "A thermometer measures temperature",
+      "image_path": null,
+      "metadata": {
+        "split": "train"
+      }
+    },
+    {
+      "id": "demo_claim",
+      "node_id": "demo_claim",
+      "node_type": "Claim",
+      "paper_id": "demo",
+      "page": -1,
+      "content": "The measured temperature is 20 degrees Celsius",
+      "image_path": null,
+      "metadata": {
+        "split": "train"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "src_id": "demo_paper",
+      "dst_id": "demo_concept",
+      "edge_type": "CONTAINS",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "metadata": {}
+    },
+    {
+      "src_id": "demo_concept",
+      "dst_id": "demo_claim",
+      "edge_type": "SUPPORTS",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "metadata": {}
+    }
+  ]
+}

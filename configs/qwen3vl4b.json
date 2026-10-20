@@ -1,0 +1,25 @@
+{
+  "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+  "device": "cuda:0",
+  "n_epochs": 3,
+  "questions_per_epoch": 32,
+  "n_samples_per_question": 6,
+  "learning_rate": 0.00005,
+  "warmup_frac": 0.1,
+  "kl_coeff": 0.05,
+  "grad_accum": 4,
+  "train_micro_batch": 1,
+  "gen_batch_size": 1,
+  "max_new_tokens": 320,
+  "question_max_new_tokens": 96,
+  "temperature": 0.9,
+  "max_hops": 3,
+  "objective": "spark",
+  "seed": 42,
+  "lora": {
+    "r": 16,
+    "lora_alpha": 32,
+    "target_modules": ["q_proj", "v_proj"],
+    "lora_dropout": 0.05
+  }
+}
