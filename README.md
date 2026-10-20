@@ -1,4 +1,4 @@
-# SPARK
+# SPARK: Self-Play with Asymmetric Reward from Knowledge Graphs
 
 Knowledge-graph-guided self-play for vision-language models.
 
