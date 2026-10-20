@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spark-vlm"
+version = "0.1.0"
+description = "Knowledge-graph-guided self-play for vision-language models"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["networkx>=3.2,<4", "Pillow>=10"]
+
+[project.optional-dependencies]
+train = ["torch==2.7.0", "transformers==4.57.1", "peft==0.20.0", "accelerate>=1.6,<2", "torchvision==0.22.0", "sentencepiece>=0.2", "einops>=0.8", "numpy>=1.26,<3"]
+neo4j = ["neo4j>=5,<6"]
+dev = ["pytest>=8,<10", "ruff>=0.9"]
+
+[project.scripts]
+spark = "spark_vlm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["._*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
